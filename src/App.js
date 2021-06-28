@@ -1,60 +1,46 @@
-import { Component } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
+import './styles/NavBar.scss';
 import './styles/App.css';
+import NavBar from './components/NavBar';
+import WeatherDisplay from './components/WeatherDisplay';
+import { fetchWeather } from './components/FetchWeather';
 
-class App extends Component {
-  state = {
-    coords: {
-      latitude: 45,
-      longitude: 60
-    },
-    data: {}
-  }
+const App = () => {
 
-  //Getting Device location
-  componentDidMount() {
+  const [query, setQuery] = useState('');
+  const [weather, setWeather] = useState({});
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        let newCoords = {
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude
-        }
+  const search = async (e) => {
+    if (e.key === 'Enter') {
+      const data = await fetchWeather(query);
 
-        this.setState({ coords: newCoords });
-
-        //APi Call
-        axios.get(`http://api.weatherstack.com/current?access_key=025fc26d1d1ef93ce9d21c96c38f9be7&query=${this.state.coords.latitude},${this.state.coords.longitude}`)
-          .then(res => {
-
-            let weatherData = {
-              temperature: res.data.current.temperature,
-              description: res.data.current.weather_descriptions[0],
-              location: res.data.location.name,
-              region: res.data.location.region,
-              country: res.data.location.country,
-              wind_speed: res.data.current.wind_speed,
-              pressure: res.data.current.pressure,
-              precip: res.data.current.precip,
-              humidity: res.data.current.humidity,
-              img: res.data.current.weather_icons
-            }
-
-            this.setState({ data: weatherData });
-
-          })
-      })
-    } else {
-      console.log('not supported')
+      setWeather(data);
+      setQuery('');
     }
   }
-  render() {
-    return (
-      <div className="App">
-        <h2>React Weather App</h2>
-      </div>
-    );
-  }
+  return (
+    <div className="main-container">
+      <input type="text" className="search" placeholder="Search..." value={query} onChange={(e) => setQuery(e.target.value)} onKeyPress={search} />
+      {weather.main && (
+        <div className="city">
+          <h2 className="city-name">
+            <span>{weather.name}</span>
+            <sup>{weather.sys.country}</sup>
+          </h2>
+          <div className="city-temp">
+            {/* <p>{weather.main.temp_min}</p> */}
+            {Math.round(weather.main.temp)}
+            <sup>&deg;C</sup>
+          </div>
+          <div className="info">
+            <img className="city-icon" src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description} />
+            <p>{weather.weather[0].description}</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default App;
