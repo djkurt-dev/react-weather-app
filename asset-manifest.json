@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/djkurt-dev.github.io/react-weather-app/static/css/main.a25d54cf.chunk.css",
+    "main.js": "/djkurt-dev.github.io/react-weather-app/static/js/main.918872e8.chunk.js",
+    "main.js.map": "/djkurt-dev.github.io/react-weather-app/static/js/main.918872e8.chunk.js.map",
+    "runtime-main.js": "/djkurt-dev.github.io/react-weather-app/static/js/runtime-main.498ba67e.js",
+    "runtime-main.js.map": "/djkurt-dev.github.io/react-weather-app/static/js/runtime-main.498ba67e.js.map",
+    "static/js/2.0ea78f8d.chunk.js": "/djkurt-dev.github.io/react-weather-app/static/js/2.0ea78f8d.chunk.js",
+    "static/js/2.0ea78f8d.chunk.js.map": "/djkurt-dev.github.io/react-weather-app/static/js/2.0ea78f8d.chunk.js.map",
+    "static/js/3.7b18f45e.chunk.js": "/djkurt-dev.github.io/react-weather-app/static/js/3.7b18f45e.chunk.js",
+    "static/js/3.7b18f45e.chunk.js.map": "/djkurt-dev.github.io/react-weather-app/static/js/3.7b18f45e.chunk.js.map",
+    "index.html": "/djkurt-dev.github.io/react-weather-app/index.html",
+    "static/css/main.a25d54cf.chunk.css.map": "/djkurt-dev.github.io/react-weather-app/static/css/main.a25d54cf.chunk.css.map",
+    "static/js/2.0ea78f8d.chunk.js.LICENSE.txt": "/djkurt-dev.github.io/react-weather-app/static/js/2.0ea78f8d.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/djkurt-dev.github.io/react-weather-app/static/media/grad.bebd7a3c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.498ba67e.js",
+    "static/js/2.0ea78f8d.chunk.js",
+    "static/css/main.a25d54cf.chunk.css",
+    "static/js/main.918872e8.chunk.js"
+  ]
+}
