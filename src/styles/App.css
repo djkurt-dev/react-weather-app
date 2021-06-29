@@ -28,7 +28,7 @@ html, body, #root {
     font-size: 15px;
 }
 .highlight-title {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 .highlight-info {
@@ -38,14 +38,10 @@ html, body, #root {
     font-size: 30px;
     font-weight: 700;
 }
-/* .highlights {
-    display: flex;
-    flex-direction: row;
-} */
 
 .weather-description {
     text-transform: capitalize;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 500;
 }
 .search {
@@ -69,11 +65,11 @@ html, body, #root {
     box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
     max-width: 700px;
     max-height: 100%;
+    overflow: auto;
 }
 
 p {
     margin-top: 10px;
-    /* text-transform: uppercase; */
     letter-spacing: 0.05em;
 }
 
@@ -90,7 +86,8 @@ p {
 }
 
 .city-name {
-    font-size: 2em;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 .city-name sup {
@@ -124,7 +121,21 @@ p {
 }
 
 @media (max-width: 991px) {
-    .city {
+    .main-container {
+        margin: auto;
+        border-radius: 5px;
         height: 100%;
+        width: 90%;
+    }
+    .search {
+        border-radius: 5px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 437px) {
+    .main-container {
+        min-height: 100%;
+        width: 90%;
     }
 }

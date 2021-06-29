@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './styles/NavBar.scss';
 import './styles/App.css';
 import { fetchWeather } from './components/FetchWeather';
 
@@ -27,7 +26,7 @@ const App = () => {
   }, [])
 
   return (
-    <div className="main-container ">
+    <div className="main-container mt-3">
       <div className="mb-3 text-center">
         <h4 className="app-name">Weather<sup>2</sup> Lang</h4>
         <p className="app-develop text-light">Developed by <strong>Kurt</strong></p>
